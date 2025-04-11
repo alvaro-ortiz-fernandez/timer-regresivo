@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/js/p5.min.js"></script>
+    <script src="assets/js/p5.sound.min.js"></script>
     <script src="sketch.js"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
@@ -12,18 +13,49 @@
     <title>Reto 2. Temporizador regresivo</title>
 </head>
 <body class="pt-4">
-    <div class="container">
+    <div id="canvas-p5"></div>
+
+    <div class="container controles">
+        <!-- Controles de tiempo -->
         <div class="row">
-            <div class="col d-flex justify-content-center">
-                <div class="card mb-3" style="width: 702px">
-                    <div id="canvas-p5"></div>
-                    <div class="card-body pt-2">
-                        <h4 class="card-title">Temporizador regresivo</h4>
-                        <div class="card-text">
-                            <p>ABC.</p>
+            <div class="col d-flex justify-content-center mb-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="d-flex flex-row">
+                            <div class="p-2">
+                                <input type="text"id="minuto" class="form-control">
+                            </div>
+                            <div class="mx-2">
+                                <h1 class="text-light">:</h1>
+                            </div>
+                            <div class="p-2">
+                                <input type="text" id="segundo" class="form-control">
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- Botones -->
+        <div class="row">
+            <div class="col">
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                      <!-- Iniciar -->
+                      <button type="button" class="btn btn-lg btn-outline-danger" onclick="iniciar()" id="iniciar">
+                        <i class="bi bi-play-fill"></i>
+                        <span>Iniciar</span>
+                      </button>
+                      <!-- Detener -->
+                      <button type="button" class="btn btn-lg btn-outline-danger" onclick="detener()" id="detener">
+                        <i class="bi bi-pause-fill"></i>
+                        <span>Detener</span>
+                      </button>
+                      <!-- Reiniciar -->
+                      <button type="button" class="btn btn-lg btn-outline-danger" onclick="reiniciar()" id="reiniciar">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                        <span>Reiniciar</span>
+                      </button>
+                    </div>
             </div>
         </div>
     </div>
