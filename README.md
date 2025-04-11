@@ -1,2 +1,2 @@
-# reloj-creativo
-Desarrollo de aplicaciones interactivas | Reto 1
+# timer-regresivo
+Desarrollo de aplicaciones interactivas | Reto 2
